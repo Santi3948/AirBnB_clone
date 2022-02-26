@@ -7,11 +7,16 @@ from datetime import datetime
 class BaseModel():
     """class BaseModel doc"""
 
-    def __init__(self, id=None):
+    def __init__(self, *args, **kwargs):
         """constructor method doc"""
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if len(kwargs) > 0:
+            for key in kwargs:
+                if key is not "__class__":
+                    setattr(self, key, kwargs[key])
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """str doc"""
@@ -23,10 +28,10 @@ class BaseModel():
 
     def to_dict(self):
         """to dict doc"""
-        my_dict = self.__dict__
+        my_dict = self.__dict__.copy()
         my_dict["__class__"] = self.__class__.__name__
-        my_dict["created_at"] = self.created_at.isoformat("\
+        my_dict["created_at"] = my_dict["created_at"].isoformat("\
 #", "microseconds")
-        my_dict["updated_at"] = self.updated_at.isoformat("\
+        my_dict["updated_at"] = my_dict["updated_at"].isoformat("\
 #", "microseconds")
         return my_dict
