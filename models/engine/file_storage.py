@@ -15,7 +15,7 @@ class FileStorage:
 
     def new(self, obj):
         """method new doc"""
-        self.__objects[f"{type(obj).__name__}.{obj.id}"] = obj.to_dict()
+        self.__objects[f'{type(obj).__name__}.{obj.id}'] = obj.to_dict()
 
     def save(self):
         """method save doc"""

@@ -2,7 +2,7 @@
 """Model Base module doc"""
 from uuid import uuid4
 from datetime import datetime
-from __init__.py import storage
+from __init__ import storage
 
 class BaseModel():
     """class BaseModel doc"""
@@ -25,7 +25,7 @@ class BaseModel():
 
     def save(self):
         """save doc"""
-        storage.save()
+        storage.save(self)
         self.updated_at = datetime.now()
 
     def to_dict(self):
