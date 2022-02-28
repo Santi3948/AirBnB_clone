@@ -11,12 +11,25 @@ class FileStorage:
 
     def all(self):
         """method all doc"""
-        return __objects
+        return self.__objects
 
     def new(self, obj):
         """method new doc"""
-        self.__objects[obj.__class__.__name__.id] = obj
+        self.__objects[f"{type(obj).__name__}.{obj.id}"] = obj.to_dict()
 
     def save(self):
         """method save doc"""
-        self.__file_path = __objects.__dict__
+        try:
+            with open (self.__file_path, 'w+') as f:
+                f.write(js.dump(self.__objects, f))
+        except Exception:
+            return
+
+    def reload(self):
+        """ethod reload doc"""
+       try:
+            with open (self.__file_path) as f:
+                self.__objects = js.loads(f)
+				return self.__objects
+        except Exception:
+            return 
