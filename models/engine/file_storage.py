@@ -6,7 +6,7 @@ from os import path
 
 class FileStorage:
     """class FileStorage doc"""
-    __file_path = __file__
+    __file_path = 'file.json'
     __objects = {}
 
     def all(self):
@@ -20,16 +20,16 @@ class FileStorage:
     def save(self):
         """method save doc"""
         try:
-            with open (self.__file_path, 'w+') as f:
-                f.write(js.dump(self.__objects, f))
+            with open(self.__file_path, 'w+') as f:
+                f.write(json.dump(self.__objects, f))
         except Exception:
             return
 
     def reload(self):
-        """ethod reload doc"""
-       try:
-            with open (self.__file_path) as f:
-                self.__objects = js.loads(f)
-				return self.__objects
+        """method reload doc"""
+        try:
+            with open(self.__file_path, 'r') as f:
+                self.__objects = json.load(f)
+            return self.__objects
         except Exception:
-            return 
+            return

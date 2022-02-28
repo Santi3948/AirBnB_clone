@@ -2,7 +2,8 @@
 """Model Base module doc"""
 from uuid import uuid4
 from datetime import datetime
-from __init__ import storage
+from models.__init__ import storage
+
 
 class BaseModel():
     """class BaseModel doc"""
@@ -11,7 +12,7 @@ class BaseModel():
         """constructor method doc"""
         if len(kwargs) > 0:
             for key in kwargs:
-                if key is not "__class__":
+                if key != "__class__":
                     setattr(self, key, kwargs[key])
         else:
             self.id = str(uuid4())
@@ -25,7 +26,7 @@ class BaseModel():
 
     def save(self):
         """save doc"""
-        storage.save(self)
+        storage.save()
         self.updated_at = datetime.now()
 
     def to_dict(self):
