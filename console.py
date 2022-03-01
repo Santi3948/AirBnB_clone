@@ -1,12 +1,25 @@
 #!/usr/bin/python3
 """console module doc"""
 import cmd
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
     file = None
+
+    def do_create(self, arg):
+        """creates a new instance of BaseModel"""
+        if not arg:
+            print("** class name missing **")
+        else:
+            try:
+                var = arg()
+                with open()
+            except NameError:
+                print("** class doesn't exist **")
 
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
