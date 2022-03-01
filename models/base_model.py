@@ -2,7 +2,7 @@
 """Model Base module doc"""
 from uuid import uuid4
 from datetime import datetime
-from models.__init__ import storage
+from models import storage
 
 
 class BaseModel():
@@ -16,8 +16,8 @@ class BaseModel():
                     setattr(self, key, kwargs[key])
         else:
             self.id = str(uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.created_at = datetime.now().isoformat("#", "microseconds")
+            self.updated_at = datetime.now().isoformat("#", "microseconds")
             storage.new(self)
 
     def __str__(self):
@@ -33,8 +33,6 @@ class BaseModel():
         """to dict doc"""
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = self.__class__.__name__
-        my_dict["created_at"] = my_dict["created_at"].isoformat("\
-#", "microseconds")
-        my_dict["updated_at"] = my_dict["updated_at"].isoformat("\
-#", "microseconds")
+        my_dict["created_at"] = str(my_dict["created_at"])
+        my_dict["updated_at"] = str(my_dict["updated_at"])
         return my_dict

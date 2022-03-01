@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """file_storage module doc"""
 import json
-from os import path
 
 
 class FileStorage:
     """class FileStorage doc"""
-    __file_path = 'file.json'
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
@@ -15,21 +14,25 @@ class FileStorage:
 
     def new(self, obj):
         """method new doc"""
-        self.__objects[f'{type(obj).__name__}.{obj.id}'] = obj.to_dict()
+        self.__objects[f'{type(obj).__name__}.{obj.id}'] = obj
 
     def save(self):
         """method save doc"""
-        try:
-            with open(self.__file_path, 'w+') as f:
-                f.write(json.dump(self.__objects, f))
-        except Exception:
-            return
+        my_dict = {}
+        with open(self.__file_path, 'w+') as f:
+            for key, value in self.__objects.items():
+                my_dict[key] = value.to_dict()
+            json.dump(my_dict, f)
 
     def reload(self):
         """method reload doc"""
+        from models.base_model import BaseModel
+        from models.user import User
         try:
             with open(self.__file_path, 'r') as f:
-                self.__objects = json.load(f)
-            return self.__objects
+                new_dict = json.load(f)
+                for key, value in new_dict.items():
+                    class_base = str(key).split(".")
+                    self.__objects[key] = eval(class_base[0])(**value)
         except Exception:
             return
