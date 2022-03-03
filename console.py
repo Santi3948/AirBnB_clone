@@ -22,7 +22,7 @@ class HBNBCommand(cmd.Cmd):
                 print(f'{var.id}')
             else:
                 print("** class doesn't exist **")
-    
+
     def do_show(self, arg):
         """Prints the string representation of an instance"""
         var = arg.split(" ")
@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             elif len(var) == 1:
                 print("** instance id missing **")
-            else: 
+            else:
                 my_dict = storage.all()
                 for obj in my_dict:
                     var2 = obj.split(".")
@@ -110,6 +110,7 @@ class HBNBCommand(cmd.Cmd):
         """Quit command to exit the program\n"""
         self.close()
         return True
+
     def do_EOF(self, arg):
         """Quit command to exit the program"""
         self.close()
