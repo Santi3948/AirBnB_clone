@@ -13,11 +13,15 @@ class BaseModel():
         if len(kwargs) > 0:
             for key in kwargs:
                 if key != "__class__":
-                    setattr(self, key, kwargs[key])
+                    if key == "created_at" or attr == "updated_at":
+                        setattr(self, key, datetime.strptime(kwargs[key], '%Y\
+-%m-%dT%H:%M:%S.%f'))
+                    else:
+                        setattr(self, key, kwargs[key])
         else:
             self.id = str(uuid4())
-            self.created_at = datetime.now().isoformat("#", "microseconds")
-            self.updated_at = datetime.now().isoformat("#", "microseconds")
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
             storage.new(self)
 
     def __str__(self):
@@ -33,6 +37,6 @@ class BaseModel():
         """to dict doc"""
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = self.__class__.__name__
-        my_dict["created_at"] = str(my_dict["created_at"])
-        my_dict["updated_at"] = str(my_dict["updated_at"])
+        my_dict["created_at"] = self.created_at.isoformat()
+        my_dict["updated_at"] = self.updated_at.isoformat()
         return my_dict
