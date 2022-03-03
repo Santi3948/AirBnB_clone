@@ -4,19 +4,27 @@ import cmd
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.__init__ import storage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
     file = None
+    ClassList = ["BaseModel", "Place", "State", "City", "Amenity", "Review", "User"]
 
     def do_create(self, arg):
         """creates a new instance of BaseModel"""
         if not arg:
             print("** class name missing **")
         else:
-            if arg == "BaseModel":
+            if arg in self.ClassList:
                 var = eval(f'{arg}()')
                 var.save()
                 print(f'{var.id}')
@@ -29,7 +37,7 @@ class HBNBCommand(cmd.Cmd):
         if len(var) == 1 and var[0] == '':
             print("** class name missing **")
         else:
-            if var[0] != "BaseModel":
+            if var[0] not in self.ClassList:
                 print("** class doesn't exist **")
             elif len(var) == 1:
                 print("** instance id missing **")
@@ -48,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         if len(var) == 1 and var[0] == '':
             print("** class name missing **")
         else:
-            if var[0] != "BaseModel":
+            if var[0] not in self.ClassList:
                 print("** class doesn't exist **")
             elif len(var) == 1:
                 print("** instance id missing **")
@@ -65,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
         """Prints all string representation of all instances"""
         lis = []
         if arg:
-            if arg != "BaseModel":
+            if arg not in self.ClassList:
                 print("** class doesn't exist **")
             else:
                 my_dict = storage.all()
@@ -73,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
                     var2 = obj.split(".")
                     if var2[0] == arg:
                         lis.append(str(my_dict[obj]))
-                    print(f'{lis}')
+                        print(f'{lis}')
         else:
             my_dict = storage.all()
             for obj in my_dict:
@@ -86,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
         if len(spl) == 1 and spl[0] == '':
             print("** class name missing **")
         else:
-            if spl[0] != "BaseModel":
+            if spl[0] not in self.ClassModel:
                 print("** class doesn't exist **")
             elif len(spl) == 1:
                 print("** instance id missing **")
