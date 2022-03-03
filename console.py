@@ -97,6 +97,7 @@ class HBNBCommand(cmd.Cmd):
                     var2 = obj.split(".")
                     if var2[1] == spl[1]:
                         flag = 1
+                        break
                 if flag == 0:
                     print("** no instance found **")
                 elif len(spl) == 2:
@@ -104,7 +105,7 @@ class HBNBCommand(cmd.Cmd):
                 elif len(spl) == 3:
                     print("** value missing **")
                 else:
-                    
+                    setattr(my_dict[obj], spl[2], spl[3])
 
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
