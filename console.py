@@ -19,6 +19,8 @@ class HBNBCommand(cmd.Cmd):
     file = None
     ClassList = ["BaseModel", "Place", "State", "City", "Amenity", "Review", "User"]
 
+    HBNBCommand().default(line)
+
     def do_create(self, arg):
         """creates a new instance of BaseModel"""
         if not arg:
