@@ -25,6 +25,8 @@ class test_base_model(unittest.TestCase):
         test_dict = bm.to_dict()
         self.assertEqual(type(test_dict), dict)
         self.assertEqual(test_dict, bm.to_dict())
+        self.assertEqual(type(test_dict["created_at"]), str)
+        self.assertEqual(type(test_dict["updated_at"]), str)
 
 
 if __name__ == '__main__':
