@@ -17,9 +17,8 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
     file = None
-    ClassList = ["BaseModel", "Place", "State", "City", "Amenity", "Review", "User"]
-
-    HBNBCommand().default(line)
+    ClassList = ["BaseModel", "Place", "State", "City", "\
+Amenity", "Review", "User"]
 
     def do_create(self, arg):
         """creates a new instance of BaseModel"""
@@ -117,27 +116,49 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     setattr(my_dict[obj], spl[2], spl[3])
 
+    def do_count(self, arg):
+        """retrieve the number of instances of a class"""
+        count = 0
+        if arg:
+            if arg not in self.ClassList:
+                print("0")
+            else:
+                my_dict = storage.all()
+                for obj in my_dict:
+                    var = obj.split(".")
+                    if var[0] == arg:
+                        count += 1
+                print("{}".format(count))
+        else:
+            print("0")
+
+    def default(self, line):
+        """Method called when the command prefix is not recognized"""
+        var = line.split(".")
+        if len(var) == 2:
+            var2 = var[1].split("(")
+            if len(var2) == 2:
+                var3 = var2[1].split(")")
+        try:
+            print(var[0])
+            print(var2[0])
+            eval(f'self.do_{var2[0]}')(var[0])
+        except Exception:
+            print(f'*** Unknown syntax: {line}')
+
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
-        self.close()
+        print("")
         return True
 
     def do_EOF(self, arg):
         """Quit command to exit the program"""
-        self.close()
+        print("")
         return True
-
-    def close(self):
-        """Quit command to exit the program"""
-        if self.file:
-            self.file.close()
-            self.file = None
 
     def emptyline(self):
         """checks if there's no input for the prompt"""
-        if self.lastcmd:
-            self.lastcmd = ""
-            return self.onecmd('\n')
+        pass
 
 
 if __name__ == '__main__':
