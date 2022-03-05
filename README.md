@@ -19,7 +19,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
 
 ## Usage
-In the _interactive mode_, execute the `console.py` file, and then the propmpt line will appear
+In the _interactive mode_, execute the `console.py` file, and then the prompt line will appear
 ~~~~
 root@ubuntu:/# ./console.py
 (hbnb) 
