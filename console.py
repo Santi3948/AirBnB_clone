@@ -26,9 +26,9 @@ Amenity", "Review", "User"]
             print("** class name missing **")
         else:
             if arg in self.ClassList:
-                var = eval(f'{arg}()')
+                var = eval("{}()".format(arg))
                 var.save()
-                print(f'{var.id}')
+                print("{}".format(var.id))
             else:
                 print("** class doesn't exist **")
 
@@ -47,7 +47,7 @@ Amenity", "Review", "User"]
                 for obj in my_dict:
                     var2 = obj.split(".")
                     if var2[1] == var[1]:
-                        print(f'{my_dict[obj]}')
+                        print("{}".format(my_dict[obj]))
                         return
                 print("** no instance found **")
 
@@ -87,7 +87,7 @@ Amenity", "Review", "User"]
             my_dict = storage.all()
             for obj in my_dict:
                 lis.append(str(my_dict[obj]))
-            print(f'{lis}')
+            print("{}".format(lis))
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
@@ -95,7 +95,7 @@ Amenity", "Review", "User"]
         if len(spl) == 1 and spl[0] == '':
             print("** class name missing **")
         else:
-            if spl[0] not in self.ClassModel:
+            if spl[0] not in self.ClassList:
                 print("** class doesn't exist **")
             elif len(spl) == 1:
                 print("** instance id missing **")
@@ -142,9 +142,9 @@ Amenity", "Review", "User"]
         try:
             print(var[0])
             print(var2[0])
-            eval(f'self.do_{var2[0]}')(var[0])
+            eval("self.do_{}".format(var2[0])(var[0]))
         except Exception:
-            print(f'*** Unknown syntax: {line}')
+            print("*** Unknown syntax: {}".format(line))
 
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
