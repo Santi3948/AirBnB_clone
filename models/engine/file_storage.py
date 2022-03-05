@@ -14,7 +14,7 @@ class FileStorage:
 
     def new(self, obj):
         """method new doc"""
-        self.__objects[f'{type(obj).__name__}.{obj.id}'] = obj
+        self.__objects["{}.{}".format(type(obj).__name__, obj.id)] = obj
 
     def save(self):
         """method save doc"""
