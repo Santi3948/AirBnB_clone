@@ -19,6 +19,33 @@
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
 
 ## Usage
+In the _interactive mode_, execute the `console.py` file, and then the propmpt line will appear
+~~~~
+root@ubuntu:/# ./console.py
+(hbnb) 
+~~~~
+For instance, you can check the documented commands typing `help` in the console
+~~~~
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb)
+~~~~
+
+It also works in the _non-interactive mode_ as it's shown below
+~~~~
+root@ubuntu:/# echo "help" | ./console.py
+(hbnb) 
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+root@ubuntu:/# 
+~~~~
 
 ## Credits
 - Diego M. Acosta C.

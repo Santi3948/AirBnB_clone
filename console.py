@@ -82,7 +82,7 @@ Amenity", "Review", "User"]
                     var2 = obj.split(".")
                     if var2[0] == arg:
                         lis.append(str(my_dict[obj]))
-                        print(f'{lis}')
+                        print("{}".format(lis))
         else:
             my_dict = storage.all()
             for obj in my_dict:
