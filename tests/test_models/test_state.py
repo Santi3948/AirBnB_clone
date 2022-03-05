@@ -17,7 +17,7 @@ class test_state(unittest.TestCase):
         self.assertIsInstance(state, State)
         self.assertIsInstance(state.name, str)
         self.assertEqual(str(state), "[{}] ({}) \
-{}".format(state.__class__.__name__, state.id, state.__dict__))
+<{}>".format(state.__class__.__name__, state.id, state.__dict__))
         state.save()
         self.assertNotEqual(state.created_at, state.updated_at)
         test_dict = state.to_dict()

@@ -40,7 +40,7 @@ class test_place(unittest.TestCase):
         place.amenity_ids = [amenity_0.id, amenity_1.id]
         self.assertEqual(type(place.amenity_ids), list)
         self.assertEqual(str(place), "[{}] ({}) \
-{}".format(place.__class__.__name__, place.id, place.__dict__))
+<{}>".format(place.__class__.__name__, place.id, place.__dict__))
         place.save()
         self.assertNotEqual(place.created_at, place.updated_at)
         test_dict = place.to_dict()

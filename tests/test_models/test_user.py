@@ -20,7 +20,7 @@ class test_user(unittest.TestCase):
         self.assertIsInstance(user.first_name, str)
         self.assertIsInstance(user.last_name, str)
         self.assertEqual(str(user), "[{}] \
-({}) {}".format(user.__class__.__name__, user.id, user.__dict__))
+({}) <{}>".format(user.__class__.__name__, user.id, user.__dict__))
         user.save()
         self.assertNotEqual(user.created_at, user.updated_at)
         test_dict = user.to_dict()

@@ -27,7 +27,7 @@ class test_review(unittest.TestCase):
         self.assertEqual(review.user_id, user.id)
         self.assertIsInstance(review.text, str)
         self.assertEqual(str(review), "[{}] ({}) \
-{}".format(review.__class__.__name__, review.id, review.__dict__))
+<{}>".format(review.__class__.__name__, review.id, review.__dict__))
         review.save()
         self.assertNotEqual(review.created_at, review.updated_at)
         test_dict = review.to_dict()

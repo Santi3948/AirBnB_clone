@@ -17,7 +17,7 @@ class test_amenity(unittest.TestCase):
         self.assertIsInstance(amenity, Amenity)
         self.assertIsInstance(amenity.name, str)
         self.assertEqual(str(amenity), "[{}] \
-({}) {}".format(amenity.__class__.__name__, amenity.id, amenity.__dict__))
+({}) <{}>".format(amenity.__class__.__name__, amenity.id, amenity.__dict__))
         amenity.save()
         self.assertNotEqual(amenity.created_at, amenity.updated_at)
         test_dict = amenity.to_dict()

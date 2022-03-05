@@ -18,8 +18,8 @@ class test_base_model(unittest.TestCase):
         self.assertEqual(isinstance(bm.id, str), True)
         self.assertEqual(type(bm.created_at), datetime)
         self.assertIsInstance(bm.updated_at, datetime)
-        self.assertEqual(str(bm), f"[{bm.__class__.__name__}] \
-({bm.id}) {bm.__dict__}")
+        self.assertEqual(str(bm), "[{}] ({}) \
+<{}>".format(bm.__class__.__name__, bm.id, bm.__dict__))
         bm.save()
         self.assertNotEqual(bm.created_at, bm.updated_at)
         test_dict = bm.to_dict()

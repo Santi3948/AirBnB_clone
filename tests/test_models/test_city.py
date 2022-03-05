@@ -21,7 +21,7 @@ class test_state(unittest.TestCase):
         self.assertEqual(state.id, city.state_id)
         self.assertIsInstance(city.name, str)
         self.assertEqual(str(city), "[{}] ({}) \
-{}".format(city.__class__.__name__, city.id, city.__dict__))
+<{}>".format(city.__class__.__name__, city.id, city.__dict__))
         city.save()
         self.assertNotEqual(city.created_at, city.updated_at)
         test_dict = city.to_dict()
