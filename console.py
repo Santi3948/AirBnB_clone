@@ -148,13 +148,15 @@ Amenity", "Review", "User"]
                 if len(var4) == 1 and var4[0] != '':
                     eval("self.do_{}".format(var2[0]))(var[0] + " " + var4[0])
                 elif len(var4) == 2:
-                    eval("self.do_{}".format(var2[0]))(var[0] + " " + var4[0] + " " + var4[1])
+                    eval("self.do_{}".format(var2[0]))(var[0] + " \
+" + var4[0] + " " + var4[1])
                 elif len(var4) == 3:
-                    eval("self.do_{}".format(var2[0]))(var[0] + " " + var4[0] + " " + var4[1] + " " + var4[2])
+                    eval("self.do_{}".format(var2[0]))(var[0] + " \
+" + var4[0] + " " + var4[1] + " " + var4[2])
             else:
                 eval("self.do_{}".format(var2[0]))(var[0])
         except Exception:
-                print("*** Unknown syntax: {}".format(line))
+            print("*** Unknown syntax: {}".format(line))
 
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
