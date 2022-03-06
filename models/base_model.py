@@ -2,7 +2,6 @@
 """Model Base module doc"""
 from datetime import datetime
 from uuid import uuid4
-
 from models import storage
 
 
