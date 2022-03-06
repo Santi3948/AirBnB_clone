@@ -32,8 +32,8 @@ class BaseModel():
 
     def save(self):
         """save doc"""
-        storage.save()
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """to dict doc"""
