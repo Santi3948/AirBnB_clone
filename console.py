@@ -140,13 +140,17 @@ Amenity", "Review", "User"]
             if len(var2) == 2:
                 var3 = var2[1].split(")")
         try:
-            print(var[0])
-            print(var2[0])
-            print(var3[0])
-            print(var3)
-            print(var[0] + " " + var3[0])
+            var4 = var3[0].split(" ")
+            for item in range(len(var4)):
+                var4[item] = var4[item].strip(",")
+                var4[item] = var4[item].strip("\"")
             if var3[0] != '':
-                eval("self.do_{}".format(var2[0]))(var[0] + " " + var3[0])
+                if len(var4) == 1 and var4[0] != '':
+                    eval("self.do_{}".format(var2[0]))(var[0] + " " + var4[0])
+                elif len(var4) == 2:
+                    eval("self.do_{}".format(var2[0]))(var[0] + " " + var4[0] + " " + var4[1])
+                elif len(var4) == 3:
+                    eval("self.do_{}".format(var2[0]))(var[0] + " " + var4[0] + " " + var4[1] + " " + var4[2])
             else:
                 eval("self.do_{}".format(var2[0]))(var[0])
         except Exception:
