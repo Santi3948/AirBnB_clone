@@ -142,7 +142,7 @@ Amenity", "Review", "User"]
         try:
             print(var[0])
             print(var2[0])
-            eval("self.do_{}".format(var2[0])(var[0]))
+            eval("self.do_{}".format(var2[0]))(var[0])
         except Exception:
             print("*** Unknown syntax: {}".format(line))
 
