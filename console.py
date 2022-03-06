@@ -142,9 +142,15 @@ Amenity", "Review", "User"]
         try:
             print(var[0])
             print(var2[0])
-            eval("self.do_{}".format(var2[0]))(var[0])
+            print(var3[0])
+            print(var3)
+            print(var[0] + " " + var3[0])
+            if var3[0] != '':
+                eval("self.do_{}".format(var2[0]))(var[0] + " " + var3[0])
+            else:
+                eval("self.do_{}".format(var2[0]))(var[0])
         except Exception:
-            print("*** Unknown syntax: {}".format(line))
+                print("*** Unknown syntax: {}".format(line))
 
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
