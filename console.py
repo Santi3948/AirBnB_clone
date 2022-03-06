@@ -16,7 +16,6 @@ from models.user import User
 class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
-    file = None
     ClassList = ["BaseModel", "Place", "State", "City", "\
 Amenity", "Review", "User"]
 
