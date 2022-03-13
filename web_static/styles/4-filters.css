@@ -13,5 +13,7 @@ button {
     width: 20%;
     border-style: none;
     border-radius: 4px;
+    margin: auto;
+    margin-right: 30px;
     opacity: 90%;
 }
