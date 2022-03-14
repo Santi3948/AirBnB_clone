@@ -17,6 +17,8 @@ button {
     position: absolute;
     right: 30px;
     top: 50%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
 }
 button:hover{
     background-color: #FF5A5F;
