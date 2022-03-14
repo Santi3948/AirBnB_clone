@@ -81,10 +81,12 @@ h4.amenities {
     color: black;
     position: absolute;
 }
-ul li{
+ul.popover2 li{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin-top: -15px;
+}
+ul {
+    list-style-type: none;
 }
 
 .locations:hover .popover{
@@ -93,4 +95,10 @@ ul li{
 
 .amenities:hover .popover{
     display: block;
+}
+div.amenities ul.popover li{
+    margin: 20px;
+}
+h2 {
+    font-size: 16px;
 }

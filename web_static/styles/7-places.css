@@ -1,0 +1,21 @@
+section.places h1 {
+    vertical-align: top;
+    text-align: left;
+    font-size: 30px;
+}
+article {
+    display: inline-block;
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border:  #FF5A5F solid 1px;
+    border-radius: 4px;
+}
+article.Suite {
+    margin-left: 25%;
+
+}
+article h2 {
+    font-size: 30px;
+    text-align: center;
+}
