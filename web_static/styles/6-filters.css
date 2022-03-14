@@ -79,3 +79,6 @@ ul.popover{
     color: black;
     position: absolute;
 }
+li {
+    list-style-type: none;
+}
