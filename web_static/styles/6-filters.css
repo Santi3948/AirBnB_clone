@@ -81,5 +81,5 @@ ul.popover{
 }
 li {
     list-style-type: none;
-    position: absolute;
+    position: relative;
 }
