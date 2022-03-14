@@ -18,6 +18,8 @@
     position: absolute;
     right: 30px;
     top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 .button:hover{
     background-color: #FF5A5F;
