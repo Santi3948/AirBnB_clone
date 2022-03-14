@@ -37,13 +37,13 @@
     position: absolute;
     border-right: #DDDDDD solid 1px;
 }
-h3.locations {
+h3 {
     position: absolute;
     right: 157px;
     font-weight: 600;
     color: black;
 }
-h4.locations {
+h4 {
     position: absolute;
     right: 80px;
     top: 20px;
