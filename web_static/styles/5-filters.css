@@ -30,7 +30,6 @@
     width: 25%;
     position: absolute;
     right: 50%;
-    text-align: center;
 }
 .locations {
     height: 100%;
@@ -43,6 +42,7 @@ h3 {
     color: black;
 }
 h4 {
+    margin: 0;
     font-weight: 400;
     font-size: 14px;
     color: black;
