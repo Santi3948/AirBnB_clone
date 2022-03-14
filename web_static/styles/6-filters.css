@@ -76,4 +76,5 @@ ul.popover{
     border:  #DDDDDD solid 1px;
     border-radius: 4px;
     color: black;
+    position: absolute;
 }
