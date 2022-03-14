@@ -70,7 +70,6 @@ h4.amenities {
     color: black;
 }
 ul.popover{
-    display: none;
     list-style-type: none;
     top: 56px;
     background-color: #FAFAFA;
