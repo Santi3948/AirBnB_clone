@@ -44,7 +44,7 @@ h3 {
 h4 {
     position: absolute;
     right: 60px;
-    top: 10px;
+    top: 15px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-weight: 400;
