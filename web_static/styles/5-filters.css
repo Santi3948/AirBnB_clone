@@ -38,12 +38,12 @@
     border-right: #DDDDDD solid 1px;
 }
 h3 {
-    right: 20px;
+    padding-right: 10px;
     font-weight: 600;
     color: black;
 }
 h4 {
-    right: 20px;
+    padding-right: 10px;
     font-weight: 400;
     font-size: 14px;
     color: black;
