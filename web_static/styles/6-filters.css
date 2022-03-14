@@ -83,7 +83,3 @@ ul.popover{
 li {
     list-style-type: none;
 }
-
-div.amenities:hover {
-    display: block;
-}
