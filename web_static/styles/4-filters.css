@@ -17,7 +17,7 @@
     cursor: pointer;
     position: absolute;
     right: 30px;
-    top: 1%;
+    top: 50%;
 }
 .button:hover{
     background-color: #FF5A5F;
