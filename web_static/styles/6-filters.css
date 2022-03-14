@@ -70,8 +70,9 @@ h4.amenities {
     color: black;
 }
 ul.popover {
-    color: #FAFAFA;
+    background-color: #FAFAFA;
     width: 100%;
     border:  #DDDDDD solid 1px;
     border-radius: 4px;
+    color: black;
 }
