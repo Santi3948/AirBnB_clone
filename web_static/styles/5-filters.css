@@ -37,13 +37,29 @@
     position: absolute;
     border-right: #DDDDDD solid 1px;
 }
-h3 {
+h3.locations {
     position: absolute;
     right: 157px;
     font-weight: 600;
     color: black;
 }
-h4 {
+h4.locations {
+    position: absolute;
+    right: 80px;
+    top: 20px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+}
+h3.amenities {
+    position: absolute;
+    right: 157px;
+    font-weight: 600;
+    color: black;
+}
+h4.amenities {
     position: absolute;
     right: 80px;
     top: 20px;
