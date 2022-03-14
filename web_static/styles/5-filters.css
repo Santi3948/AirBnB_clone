@@ -45,8 +45,6 @@ h4 {
     position: absolute;
     right: 30px;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
     font-weight: 400;
     font-size: 14px;
     color: black;
