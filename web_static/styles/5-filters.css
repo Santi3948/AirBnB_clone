@@ -25,11 +25,15 @@
     background-color: #FF5A5F;
     opacity: 90%;
 }
-div.locations div.amenities {
+.amenities {
     height: 100%;
     width: 25%;
+    position: absolute;
 }
-div.locations {
+.locations {
+    height: 100%;
+    width: 25%;
+    position: absolute;
     border-right: #DDDDDD solid 1px;
 }
 h3 {
