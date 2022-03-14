@@ -26,6 +26,7 @@
     opacity: 90%;
 }
 div.amenities {
+    display: inline-block;
     height: 100%;
     width: 25%;
     position: absolute;
@@ -39,7 +40,6 @@ div.locations {
     border-right: #DDDDDD solid 1px;
 }
 h3.locations {
-    display: inline-block;
     position: absolute;
     right: 157px;
     font-weight: 600;
