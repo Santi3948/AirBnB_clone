@@ -38,6 +38,10 @@
     border-right: #DDDDDD solid 1px;
 }
 h3 {
+    position: absolute;
+    right: 80px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     font-weight: 600;
     color: black;
 }
