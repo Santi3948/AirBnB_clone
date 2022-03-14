@@ -26,24 +26,24 @@
     opacity: 90%;
 }
 .amenities {
-    margin: 10px;
     height: 100%;
     width: 25%;
     position: absolute;
     right: 50%;
 }
 .locations {
-    margin: 10px;
     height: 100%;
     width: 25%;
     position: absolute;
     border-right: #DDDDDD solid 1px;
 }
 h3 {
+    margin: 10px;
     font-weight: 600;
     color: black;
 }
 h4 {
+    margin: 10px;
     font-weight: 400;
     font-size: 14px;
     color: black;
