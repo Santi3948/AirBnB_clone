@@ -69,7 +69,8 @@ h4.amenities {
     font-size: 14px;
     color: black;
 }
-ul.popover {
+ul.popover{
+    display: none;
     background-color: #FAFAFA;
     width: 83%;
     border:  #DDDDDD solid 1px;
